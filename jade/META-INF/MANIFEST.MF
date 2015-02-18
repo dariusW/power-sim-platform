@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: ./commons-lang3-3.3.2;./jade;./joda-time-2.5;./power-sim-m
+ odel;./org.eclipse.emf.ecore.xmi_2.10.1.v20140901-1043
+Main-Class: pl.agh.dariuszw.RunTime
+

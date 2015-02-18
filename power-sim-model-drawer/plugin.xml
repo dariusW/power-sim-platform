@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+      		description="Power Simulator object model diagram"
+            name="Device Diagram"
+            type="power-sim-model-drawer"
+            id="pl.agh.powerSimDrawer.PowerSimDiagramType">
+      </diagramType>
+   </extension>
+   
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            name="Power-sim-model-drawer Diagram Type Provider"
+            class="pl.agh.powerSimDrawer.diagram.PowerSimDiagramTypeProvider"
+            id="power-sim-model-drawer.power-sim-model-drawerDiagramTypeProvider">
+         <diagramType
+               id="pl.agh.powerSimDrawer.PowerSimDiagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+   
+   <!-- PROPERTIES -->
+   
+	<extension
+	    point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+	    <propertyContributor contributorId="power-sim-model-drawer.PropertyContributor"> 
+	        <propertyCategory category="POWER SIMULATION PLATFORM MODELER"> 
+	        </propertyCategory> 
+	    </propertyContributor> 
+	</extension>
+	       
+	 <extension
+	      point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+	    <propertyTabs
+	          contributorId="power-sim-model-drawer.PropertyContributor">
+	    <propertyTab
+	         category="POWER SIMULATION PLATFORM MODELER"
+	         id="ps.main.tab"
+	          label="Main">
+	    </propertyTab>
+	   </propertyTabs>
+	</extension>
+	     
+	 <extension
+	      point="org.eclipse.ui.views.properties.tabbed.propertySections">
+	    <propertySections
+	          contributorId="power-sim-model-drawer.PropertyContributor">
+	        <propertySection
+	              class="pl.agh.powerSimDrawer.property.PSStatePropertySection"
+	              filter="pl.agh.powerSimDrawer.property.PSStateFilter"
+	              id="ps.main.tab.psstate"
+	              tab="ps.main.tab">
+	        </propertySection>
+	    </propertySections>
+	 </extension>
+	 
+	 <extension
+	      point="org.eclipse.ui.views.properties.tabbed.propertySections">
+	    <propertySections
+	          contributorId="power-sim-model-drawer.PropertyContributor">
+	        <propertySection
+	              class="pl.agh.powerSimDrawer.property.PSStartPropertySection"
+	              filter="pl.agh.powerSimDrawer.property.PSStartFilter"
+	              id="ps.main.tab.psstart"
+	              tab="ps.main.tab">
+	        </propertySection>
+	    </propertySections>
+	 </extension>
+	 
+	 <extension
+	      point="org.eclipse.ui.views.properties.tabbed.propertySections">
+	    <propertySections
+	          contributorId="power-sim-model-drawer.PropertyContributor">
+	        <propertySection
+	              class="pl.agh.powerSimDrawer.property.PSTransitionPropertySection"
+	              filter="pl.agh.powerSimDrawer.property.PSTransitionFilter"
+	              id="ps.main.tab.pstransition"
+	              tab="ps.main.tab">
+	        </propertySection>
+	    </propertySections>
+	 </extension>
+	 
+	 <extension
+	      point="org.eclipse.ui.views.properties.tabbed.propertySections">
+	    <propertySections
+	          contributorId="power-sim-model-drawer.PropertyContributor">
+	        <propertySection
+	              class="pl.agh.powerSimDrawer.property.PSPlatformPropertySection"
+	              filter="pl.agh.powerSimDrawer.property.PSPlatformFilter"
+	              id="ps.main.tab.pstransition"
+	              tab="ps.main.tab">
+	        </propertySection>
+	    </propertySections>
+	 </extension>
+	 
+	 <extension
+	      point="org.eclipse.ui.views.properties.tabbed.propertySections">
+	    <propertySections
+	          contributorId="power-sim-model-drawer.PropertyContributor">
+	        <propertySection
+	              class="pl.agh.powerSimDrawer.property.PSVariablePropertySection"
+	              filter="pl.agh.powerSimDrawer.property.PSVariableFilter"
+	              id="ps.main.tab.psvariable"
+	              tab="ps.main.tab">
+	        </propertySection>
+	    </propertySections>
+	 </extension>
+</plugin>

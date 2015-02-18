@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+      		description="Power Simulator simulation diagram"
+            id="power.sim.simulation.drawer.SimulationDiagramType"
+            name="Simulation Diagram"
+            type="power-sim-simulation-drawer">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            class="power.sim.simulation.drawer.SimulationDiagramTypeProvider"
+            id="power-sim-simulation-drawer.SimulationDiagramProvider"
+            name="power-sim-simulation-drawer.SimulationDiagramTypeProvider">
+         <diagramType
+               id="power.sim.simulation.drawer.SimulationDiagramType">
+         </diagramType>
+      </diagramTypeProvider>
+   </extension>
+   
+   
+   
+   
+   
+   <!-- PROPERTIES -->
+   
+   
+   
+   
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="power-sim-simulation-drawer.PropertyContributor">
+         <propertyCategory category="POWER SIMULATION INSTALLATIONS MODELER"></propertyCategory>
+      </propertyContributor>
+   </extension>
+   
+   	 <extension
+	      point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+	    <propertyTabs
+	          contributorId="power-sim-simulation-drawer.PropertyContributor">
+	    <propertyTab
+	         category="POWER SIMULATION INSTALLATIONS MODELER"
+	         id="ps.main.tab2"
+	          label="Main">
+	    </propertyTab>
+	   </propertyTabs>
+	</extension>
+	     
+      <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="power-sim-simulation-drawer.PropertyContributor">
+         <propertySection
+               class="power.sim.simulation.drawer.PSSimulationPropertySection"
+               filter="power.sim.simulation.drawer.PSSimulationFilter"
+               id="power-sim-simulation-drawer.simulation"
+               tab="ps.main.tab2">
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+      <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="power-sim-simulation-drawer.PropertyContributor">
+         <propertySection
+               class="power.sim.simulation.drawer.PSInstallationPropertySection"
+               filter="power.sim.simulation.drawer.PSInstallationFilter"
+               id="power-sim-simulation-drawer.installation"
+               tab="ps.main.tab2">
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+   
+      <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="power-sim-simulation-drawer.PropertyContributor">
+         <propertySection
+               class="power.sim.simulation.drawer.PSRelationPropertySection"
+               filter="power.sim.simulation.drawer.PSRelationFilter"
+               id="power-sim-simulation-drawer.comunication"
+               tab="ps.main.tab2">
+         </propertySection>
+      </propertySections>
+   </extension>
+</plugin>

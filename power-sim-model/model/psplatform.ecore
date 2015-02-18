@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psplatform" nsURI="powerSim" nsPrefix="pl.agh">
+  <eClassifiers xsi:type="ecore:EClass" name="PSAgent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//PSStart"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+        upperBound="-1" eType="#//PSState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transactions" lowerBound="1"
+        upperBound="-1" eType="#//PSTransition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//PSVariable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PSStart" eSuperTypes="#//PSState">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onInit" lowerBound="1"
+        eType="#//PSSingleBehaviour" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PSState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="New State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" lowerBound="1"
+        upperBound="-1" eType="#//PSTransition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onStep" lowerBound="1"
+        eType="#//PSContinuousBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onEntry" lowerBound="1"
+        eType="#//PSSingleBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onExit" lowerBound="1"
+        eType="#//PSSingleBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PSTransition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//PSState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//PSState"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PSBehaviour">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PSVariable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PSVariableType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" lowerBound="1" eType="#//PSVariableScope"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PSVariableType">
+    <eLiterals name="Date"/>
+    <eLiterals name="Integer"/>
+    <eLiterals name="Float"/>
+    <eLiterals name="Time"/>
+    <eLiterals name="Boolean"/>
+    <eLiterals name="String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PSVariableScope">
+    <eLiterals name="External"/>
+    <eLiterals name="Local"/>
+    <eLiterals name="Public"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PSSingleBehaviour" eSuperTypes="#//PSBehaviour"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PSContinuousBehaviour" eSuperTypes="#//PSBehaviour"/>
+</ecore:EPackage>

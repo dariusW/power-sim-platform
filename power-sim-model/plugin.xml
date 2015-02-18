@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psplatform -->
+      <package
+            uri="powerSim"
+            class="psplatform.PsplatformPackage"
+            genModel="model/psplatform.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pssimulation -->
+      <package
+            uri="pssimulation"
+            class="pssimulation.PssimulationPackage"
+            genModel="model/pssimulation.genmodel"/>
+   </extension>
+
+</plugin>
