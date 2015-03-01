@@ -1,41 +1,84 @@
 package pl.agh.dariuszw;
 
+import jade.core.AID;
 import jade.core.behaviours.Behaviour;
+import jade.lang.acl.ACLMessage;
+import org.apache.logging.log4j.Logger;
+import org.joda.time.DateTime;
 
 /**
  * Created by dariuszw on 2015-02-16.
  */
-public abstract class SimBehaviour extends Behaviour{
+public abstract class SimBehaviour extends Behaviour {
 
     protected final String id;
+
     protected final String localName;
+
     private boolean init = true;
 
-    protected SimBehaviour(String localName, String name){
+    private static String STORAGE_AGENT_NAME = "storage";
+
+    private AID storageAID = new AID(STORAGE_AGENT_NAME, AID.ISLOCALNAME);
+
+    protected boolean isStart(){
+        return false;
+    }
+
+    protected SimBehaviour(String localName, String name) {
         this.id = name;
         this.localName = localName;
     }
 
-
     @Override
     public final void action() {
-        if(init){
+        if ( init ) {
             init = false;
+            log("onEntry");
+            sendStateMessage();
             onEntry();
         }
+        log("onStep");
         onStep();
-
-
-        System.out.println(localName + ": " + id);
     }
+
+    private void sendStateMessage(){
+        if(isStart()){
+            return;
+        }
+
+        ExtendedAgent ex = (ExtendedAgent) getAgent();
+
+        StringBuilder messageBuilder = new StringBuilder();
+        messageBuilder.append(ex.getInstance());
+        messageBuilder.append("#");
+        messageBuilder.append(Utils.DEFAULT_TIME_FORMATTER.print(ex.getCurrentDate()));
+        messageBuilder.append("#");
+        messageBuilder.append(id);
+
+        ACLMessage initSimulationMessage = new ACLMessage(ACLMessage.INFORM);
+        initSimulationMessage.setOntology("state");
+        initSimulationMessage.addReceiver(storageAID);
+        initSimulationMessage.setContent(messageBuilder.toString());
+        getAgent().send(initSimulationMessage);
+
+    }
+
 
     @Override
     public final boolean done() {
         boolean isDone = isDone();
-        if(isDone()){
+        if ( isDone ) {
+            log("onExit");
             onExit();
         }
         return isDone;
+    }
+
+    private Logger log = org.apache.logging.log4j.LogManager.getLogger(getClass());
+
+    private void log(String msg) {
+        log.info("LOG[" + localName + ":" + id + "]:" + msg);
     }
 
     protected abstract boolean isDone();

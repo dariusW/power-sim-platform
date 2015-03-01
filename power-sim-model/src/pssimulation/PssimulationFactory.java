@@ -40,15 +40,6 @@ public interface PssimulationFactory extends EFactory {
     PSInstance createPSInstance();
 
     /**
-     * Returns a new object of class '<em>PS Hierarchy</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>PS Hierarchy</em>'.
-     * @generated
-     */
-    PSHierarchy createPSHierarchy();
-
-    /**
      * Returns a new object of class '<em>PS Comunication</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

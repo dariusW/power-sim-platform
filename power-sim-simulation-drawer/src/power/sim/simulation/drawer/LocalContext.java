@@ -62,10 +62,10 @@ public class LocalContext {
     }
 
     public void addPSHierarchy(Diagram targetDiagram, PSHierarchy connection, PSInstance source, PSInstance target) {
-        getSimulation(targetDiagram).getConnections().add(connection);
-        connection.setParent(source);
-        connection.setChild(target);
-        connectHirarchy(targetDiagram, source, target, connection);
+        //getSimulation(targetDiagram).getConnections().add(connection);
+        //connection.setParent(source);
+        //connection.setChild(target);
+        //connectHirarchy(targetDiagram, source, target, connection);
     }
 
     public void addPSRelation(Diagram targetDiagram, PSComunication connection, PSInstance source, PSInstance target) {
@@ -75,10 +75,10 @@ public class LocalContext {
         connectRelation(targetDiagram, source, target, connection);
     }
 
-    private void connectHirarchy(Diagram targetDiagram, PSInstance masterInstalation, PSInstance slaveInstallation, PSHierarchy connection) {
-        masterInstalation.getChildren().add(connection);
-        slaveInstallation.setParent(connection);
-    }
+    //private void connectHirarchy(Diagram targetDiagram, PSInstance masterInstalation, PSInstance slaveInstallation, PSHierarchy connection) {
+        //masterInstalation.getChildren().add(connection);
+        //slaveInstallation.setParent(connection);
+    //}
 
     private void connectRelation(Diagram targetDiagram, PSInstance masterInstalation, PSInstance slaveInstallation, PSComunication connection) {
         masterInstalation.getOutgoingConnections().add(connection);

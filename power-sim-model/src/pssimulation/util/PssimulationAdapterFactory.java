@@ -76,10 +76,6 @@ public class PssimulationAdapterFactory extends AdapterFactoryImpl {
                 return createPSInstanceAdapter();
             }
             @Override
-            public Adapter casePSHierarchy(PSHierarchy object) {
-                return createPSHierarchyAdapter();
-            }
-            @Override
             public Adapter casePSComunication(PSComunication object) {
                 return createPSComunicationAdapter();
             }
@@ -128,20 +124,6 @@ public class PssimulationAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createPSInstanceAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link pssimulation.PSHierarchy <em>PS Hierarchy</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see pssimulation.PSHierarchy
-     * @generated
-     */
-    public Adapter createPSHierarchyAdapter() {
         return null;
     }
 

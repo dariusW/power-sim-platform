@@ -24,7 +24,7 @@ import pssimulation.PSSimulation;
  */
 public class SimulationContextGenerator {
 
-    static String INJECT_VALUES = "//inject-";
+    static String INJECT_VALUES = "// inject-";
 
     static String PACKAGE_PLACE = "package ";
 
@@ -118,9 +118,33 @@ public class SimulationContextGenerator {
         if ( type.equals("var") ) {
             appendVariables(simulation, inst, agent, writer);
         } else if ( type.equals("sgo") ) {
+
+            appendFields(inst, agent, writer);
+
             appendStart(writer);
         } else if ( type.equals("ini") ) {
             appendInitialization(simulation, inst, agent, writer);
+        }
+    }
+
+    private static void appendFields(PSInstance inst, PSAgent agent, StringWriter writer) {
+        writer.append("         instanceID = \"");
+        writer.append(agent.getPackage());
+        writer.append(".");
+        writer.append(agent.getId());
+        writer.append(inst.getId());
+        writer.append("\";\n\n");
+        writer.append("         instanceClass = \"");
+        writer.append(agent.getPackage());
+        writer.append(".");
+        writer.append(agent.getId());
+        writer.append("\";\n\n");
+        if(inst.getSuperinstance() != null) {
+
+            writer.append("         parent = \"");
+            writer.append(inst.getSuperinstance().getModelClass());
+            writer.append(inst.getSuperinstance().getId());
+            writer.append("\";\n\n");
         }
     }
 
@@ -185,6 +209,10 @@ public class SimulationContextGenerator {
             writer.append("\n        }\n");
             counter++;
         }
+        if("Start".equals(behaviourName)){
+            writer.append("       protected boolean isStart(){ return true; }\n\n");
+        }
+
         writer.append("    }\n\n");
     }
 

@@ -1,9 +1,12 @@
-package pl.agh.dariuszw;
+package pl.agh.dariuszw.gui;
+
+import pl.agh.dariuszw.ClockAgent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -20,6 +23,7 @@ import java.awt.event.WindowEvent;
 public class ClockGUI extends JFrame{
     private ClockAgent clockAgent;
 
+    private JProgressBar progressBar;
     JLabel currentTime;
 
 
@@ -36,15 +40,23 @@ public class ClockGUI extends JFrame{
 
         getContentPane().add(p, BorderLayout.CENTER);
 
+        progressBar = new JProgressBar();
+
+        getContentPane().add(progressBar, BorderLayout.SOUTH);
+
         // Make the agent terminate when the user closes 
         // the GUI using the button on the upper right corner	
-        addWindowListener(new	WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                clockAgent.doDelete();
-            }
-        } );
+//        addWindowListener(new	WindowAdapter() {
+//            public void windowClosing(WindowEvent e) {
+//                clockAgent.doDelete();
+//            }
+//        } );
 
         setResizable(false);
+    }
+
+    public void updateProgress(int state){
+        progressBar.setValue(state);
     }
 
     public void updateTime(String time){
@@ -55,7 +67,7 @@ public class ClockGUI extends JFrame{
     public void showGui() {
         pack();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int centerX = (int)screenSize.getWidth() / 2;
+        int centerX = (int)screenSize.getWidth() / 2 - 400;
         int centerY = (int)screenSize.getHeight() / 2;
         setLocation(centerX - getWidth() / 2, centerY - getHeight() / 2);
         super.setVisible(true);

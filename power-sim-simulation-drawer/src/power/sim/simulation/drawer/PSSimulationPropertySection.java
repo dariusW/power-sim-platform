@@ -19,6 +19,12 @@ public class PSSimulationPropertySection extends GFPropertySection implements IT
 
     private Text descText;
 
+    private Text startT;
+
+    private Text endT;
+
+    private Text stepT;
+
     volatile PSSimulation current;
 
     @Override
@@ -57,6 +63,39 @@ public class PSSimulationPropertySection extends GFPropertySection implements IT
             }
         });
 
+        startT = builder.createInput("Start Time:", new Modify() {
+
+            @Override
+            public void modify() {
+                if ( current.getSimulationStartDate() == null || !current.getSimulationStartDate().equals(startT.getText()) ) {
+                    current.setSimulationStartDate(startT.getText());
+                }
+
+            }
+        });
+
+        endT = builder.createInput("End Time:", new Modify() {
+
+            @Override
+            public void modify() {
+                if ( current.getSimulationEndDate() == null || !current.getSimulationEndDate().equals(endT.getText()) ) {
+                    current.setSimulationEndDate(endT.getText());
+                }
+
+            }
+        });
+
+        stepT = builder.createInput("Step:", new Modify() {
+
+            @Override
+            public void modify() {
+                if ( current.getSimulationStep() == null || !current.getSimulationStep().equals(stepT.getText()) ) {
+                    current.setSimulationStep(stepT.getText());
+                }
+
+            }
+        });
+
     }
 
     @Override
@@ -78,6 +117,15 @@ public class PSSimulationPropertySection extends GFPropertySection implements IT
 
             String desc = current.getDescription();
             descText.setText(desc == null ? "" : desc);
+
+            String start = current.getSimulationStartDate();
+            startT.setText(start == null ? "" : start);
+
+            String end = current.getSimulationEndDate();
+            endT.setText(end == null ? "" : end);
+
+            String step = current.getSimulationStep();
+            stepT.setText(step == null ? "" : step);
 
         }
     }

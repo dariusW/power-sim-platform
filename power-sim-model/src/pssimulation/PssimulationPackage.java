@@ -85,22 +85,13 @@ public interface PssimulationPackage extends EPackage {
     int PS_SIMULATION__ELEMENT = 1;
 
     /**
-     * The feature id for the '<em><b>Connections</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PS_SIMULATION__CONNECTIONS = 2;
-
-    /**
      * The feature id for the '<em><b>Description</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PS_SIMULATION__DESCRIPTION = 3;
+    int PS_SIMULATION__DESCRIPTION = 2;
 
     /**
      * The feature id for the '<em><b>Relations</b></em>' containment reference list.
@@ -109,7 +100,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_SIMULATION__RELATIONS = 4;
+    int PS_SIMULATION__RELATIONS = 3;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -118,7 +109,34 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_SIMULATION__NAME = 5;
+    int PS_SIMULATION__NAME = 4;
+
+    /**
+     * The feature id for the '<em><b>Simulation Step</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PS_SIMULATION__SIMULATION_STEP = 5;
+
+    /**
+     * The feature id for the '<em><b>Simulation Start Date</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PS_SIMULATION__SIMULATION_START_DATE = 6;
+
+    /**
+     * The feature id for the '<em><b>Simulation End Date</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PS_SIMULATION__SIMULATION_END_DATE = 7;
 
     /**
      * The number of structural features of the '<em>PS Simulation</em>' class.
@@ -127,7 +145,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_SIMULATION_FEATURE_COUNT = 6;
+    int PS_SIMULATION_FEATURE_COUNT = 8;
 
     /**
      * The number of operations of the '<em>PS Simulation</em>' class.
@@ -176,31 +194,13 @@ public interface PssimulationPackage extends EPackage {
     int PS_INSTANCE__MODEL_CLASS = 2;
 
     /**
-     * The feature id for the '<em><b>Parent</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PS_INSTANCE__PARENT = 3;
-
-    /**
-     * The feature id for the '<em><b>Children</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PS_INSTANCE__CHILDREN = 4;
-
-    /**
      * The feature id for the '<em><b>Model Path</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PS_INSTANCE__MODEL_PATH = 5;
+    int PS_INSTANCE__MODEL_PATH = 3;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -209,7 +209,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_INSTANCE__NAME = 6;
+    int PS_INSTANCE__NAME = 4;
 
     /**
      * The feature id for the '<em><b>Incoming Connections</b></em>' reference list.
@@ -218,7 +218,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_INSTANCE__INCOMING_CONNECTIONS = 7;
+    int PS_INSTANCE__INCOMING_CONNECTIONS = 5;
 
     /**
      * The feature id for the '<em><b>Outgoing Connections</b></em>' reference list.
@@ -227,7 +227,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_INSTANCE__OUTGOING_CONNECTIONS = 8;
+    int PS_INSTANCE__OUTGOING_CONNECTIONS = 6;
 
     /**
      * The feature id for the '<em><b>Superinstance</b></em>' reference.
@@ -236,7 +236,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_INSTANCE__SUPERINSTANCE = 9;
+    int PS_INSTANCE__SUPERINSTANCE = 7;
 
     /**
      * The feature id for the '<em><b>Subinstance</b></em>' reference list.
@@ -245,7 +245,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_INSTANCE__SUBINSTANCE = 10;
+    int PS_INSTANCE__SUBINSTANCE = 8;
 
     /**
      * The number of structural features of the '<em>PS Instance</em>' class.
@@ -254,7 +254,7 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PS_INSTANCE_FEATURE_COUNT = 11;
+    int PS_INSTANCE_FEATURE_COUNT = 9;
 
     /**
      * The number of operations of the '<em>PS Instance</em>' class.
@@ -266,52 +266,6 @@ public interface PssimulationPackage extends EPackage {
     int PS_INSTANCE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link pssimulation.impl.PSHierarchyImpl <em>PS Hierarchy</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see pssimulation.impl.PSHierarchyImpl
-     * @see pssimulation.impl.PssimulationPackageImpl#getPSHierarchy()
-     * @generated
-     */
-    int PS_HIERARCHY = 2;
-
-    /**
-     * The feature id for the '<em><b>Parent</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PS_HIERARCHY__PARENT = 0;
-
-    /**
-     * The feature id for the '<em><b>Child</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PS_HIERARCHY__CHILD = 1;
-
-    /**
-     * The number of structural features of the '<em>PS Hierarchy</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PS_HIERARCHY_FEATURE_COUNT = 2;
-
-    /**
-     * The number of operations of the '<em>PS Hierarchy</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PS_HIERARCHY_OPERATION_COUNT = 0;
-
-    /**
      * The meta object id for the '{@link pssimulation.impl.PSComunicationImpl <em>PS Comunication</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -319,7 +273,7 @@ public interface PssimulationPackage extends EPackage {
      * @see pssimulation.impl.PssimulationPackageImpl#getPSComunication()
      * @generated
      */
-    int PS_COMUNICATION = 3;
+    int PS_COMUNICATION = 2;
 
     /**
      * The feature id for the '<em><b>Begin</b></em>' reference.
@@ -397,6 +351,39 @@ public interface PssimulationPackage extends EPackage {
     EAttribute getPSSimulation_Name();
 
     /**
+     * Returns the meta object for the attribute '{@link pssimulation.PSSimulation#getSimulationStep <em>Simulation Step</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Simulation Step</em>'.
+     * @see pssimulation.PSSimulation#getSimulationStep()
+     * @see #getPSSimulation()
+     * @generated
+     */
+    EAttribute getPSSimulation_SimulationStep();
+
+    /**
+     * Returns the meta object for the attribute '{@link pssimulation.PSSimulation#getSimulationStartDate <em>Simulation Start Date</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Simulation Start Date</em>'.
+     * @see pssimulation.PSSimulation#getSimulationStartDate()
+     * @see #getPSSimulation()
+     * @generated
+     */
+    EAttribute getPSSimulation_SimulationStartDate();
+
+    /**
+     * Returns the meta object for the attribute '{@link pssimulation.PSSimulation#getSimulationEndDate <em>Simulation End Date</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Simulation End Date</em>'.
+     * @see pssimulation.PSSimulation#getSimulationEndDate()
+     * @see #getPSSimulation()
+     * @generated
+     */
+    EAttribute getPSSimulation_SimulationEndDate();
+
+    /**
      * Returns the meta object for the containment reference list '{@link pssimulation.PSSimulation#getElement <em>Element</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -406,17 +393,6 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      */
     EReference getPSSimulation_Element();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link pssimulation.PSSimulation#getConnections <em>Connections</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Connections</em>'.
-     * @see pssimulation.PSSimulation#getConnections()
-     * @see #getPSSimulation()
-     * @generated
-     */
-    EReference getPSSimulation_Connections();
 
     /**
      * Returns the meta object for the attribute '{@link pssimulation.PSSimulation#getDescription <em>Description</em>}'.
@@ -550,28 +526,6 @@ public interface PssimulationPackage extends EPackage {
     EReference getPSInstance_Subinstance();
 
     /**
-     * Returns the meta object for the reference '{@link pssimulation.PSInstance#getParent <em>Parent</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Parent</em>'.
-     * @see pssimulation.PSInstance#getParent()
-     * @see #getPSInstance()
-     * @generated
-     */
-    EReference getPSInstance_Parent();
-
-    /**
-     * Returns the meta object for the reference list '{@link pssimulation.PSInstance#getChildren <em>Children</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Children</em>'.
-     * @see pssimulation.PSInstance#getChildren()
-     * @see #getPSInstance()
-     * @generated
-     */
-    EReference getPSInstance_Children();
-
-    /**
      * Returns the meta object for the attribute '{@link pssimulation.PSInstance#getModelPath <em>Model Path</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -581,38 +535,6 @@ public interface PssimulationPackage extends EPackage {
      * @generated
      */
     EAttribute getPSInstance_ModelPath();
-
-    /**
-     * Returns the meta object for class '{@link pssimulation.PSHierarchy <em>PS Hierarchy</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>PS Hierarchy</em>'.
-     * @see pssimulation.PSHierarchy
-     * @generated
-     */
-    EClass getPSHierarchy();
-
-    /**
-     * Returns the meta object for the reference '{@link pssimulation.PSHierarchy#getParent <em>Parent</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Parent</em>'.
-     * @see pssimulation.PSHierarchy#getParent()
-     * @see #getPSHierarchy()
-     * @generated
-     */
-    EReference getPSHierarchy_Parent();
-
-    /**
-     * Returns the meta object for the reference '{@link pssimulation.PSHierarchy#getChild <em>Child</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Child</em>'.
-     * @see pssimulation.PSHierarchy#getChild()
-     * @see #getPSHierarchy()
-     * @generated
-     */
-    EReference getPSHierarchy_Child();
 
     /**
      * Returns the meta object for class '{@link pssimulation.PSComunication <em>PS Comunication</em>}'.
@@ -710,20 +632,36 @@ public interface PssimulationPackage extends EPackage {
         EAttribute PS_SIMULATION__NAME = eINSTANCE.getPSSimulation_Name();
 
         /**
+         * The meta object literal for the '<em><b>Simulation Step</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PS_SIMULATION__SIMULATION_STEP = eINSTANCE.getPSSimulation_SimulationStep();
+
+        /**
+         * The meta object literal for the '<em><b>Simulation Start Date</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PS_SIMULATION__SIMULATION_START_DATE = eINSTANCE.getPSSimulation_SimulationStartDate();
+
+        /**
+         * The meta object literal for the '<em><b>Simulation End Date</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute PS_SIMULATION__SIMULATION_END_DATE = eINSTANCE.getPSSimulation_SimulationEndDate();
+
+        /**
          * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
         EReference PS_SIMULATION__ELEMENT = eINSTANCE.getPSSimulation_Element();
-
-        /**
-         * The meta object literal for the '<em><b>Connections</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference PS_SIMULATION__CONNECTIONS = eINSTANCE.getPSSimulation_Connections();
 
         /**
          * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -824,54 +762,12 @@ public interface PssimulationPackage extends EPackage {
         EReference PS_INSTANCE__SUBINSTANCE = eINSTANCE.getPSInstance_Subinstance();
 
         /**
-         * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference PS_INSTANCE__PARENT = eINSTANCE.getPSInstance_Parent();
-
-        /**
-         * The meta object literal for the '<em><b>Children</b></em>' reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference PS_INSTANCE__CHILDREN = eINSTANCE.getPSInstance_Children();
-
-        /**
          * The meta object literal for the '<em><b>Model Path</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
         EAttribute PS_INSTANCE__MODEL_PATH = eINSTANCE.getPSInstance_ModelPath();
-
-        /**
-         * The meta object literal for the '{@link pssimulation.impl.PSHierarchyImpl <em>PS Hierarchy</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see pssimulation.impl.PSHierarchyImpl
-         * @see pssimulation.impl.PssimulationPackageImpl#getPSHierarchy()
-         * @generated
-         */
-        EClass PS_HIERARCHY = eINSTANCE.getPSHierarchy();
-
-        /**
-         * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference PS_HIERARCHY__PARENT = eINSTANCE.getPSHierarchy_Parent();
-
-        /**
-         * The meta object literal for the '<em><b>Child</b></em>' reference feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference PS_HIERARCHY__CHILD = eINSTANCE.getPSHierarchy_Child();
 
         /**
          * The meta object literal for the '{@link pssimulation.impl.PSComunicationImpl <em>PS Comunication</em>}' class.

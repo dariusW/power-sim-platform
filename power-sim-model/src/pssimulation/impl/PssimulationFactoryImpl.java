@@ -58,7 +58,6 @@ public class PssimulationFactoryImpl extends EFactoryImpl implements Pssimulatio
         switch (eClass.getClassifierID()) {
             case PssimulationPackage.PS_SIMULATION: return createPSSimulation();
             case PssimulationPackage.PS_INSTANCE: return createPSInstance();
-            case PssimulationPackage.PS_HIERARCHY: return createPSHierarchy();
             case PssimulationPackage.PS_COMUNICATION: return createPSComunication();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -83,16 +82,6 @@ public class PssimulationFactoryImpl extends EFactoryImpl implements Pssimulatio
     public PSInstance createPSInstance() {
         PSInstanceImpl psInstance = new PSInstanceImpl();
         return psInstance;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public PSHierarchy createPSHierarchy() {
-        PSHierarchyImpl psHierarchy = new PSHierarchyImpl();
-        return psHierarchy;
     }
 
     /**

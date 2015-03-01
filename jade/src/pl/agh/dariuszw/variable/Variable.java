@@ -1,141 +1,247 @@
 package pl.agh.dariuszw.variable;
 
-import jade.core.AID;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
-import pl.agh.dariuszw.Utils;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+import jade.core.AID;
 import jade.core.Agent;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
-
-import java.util.ArrayList;
-import java.util.List;
+import pl.agh.dariuszw.ExtendedAgent;
+import pl.agh.dariuszw.Utils;
 
 /**
  * Created by dariuszw on 2015-02-10.
  */
-public class Variable<T> {
+public class Variable {
 
     private Object value;
 
-    private MessageTemplate updateTemplate;
+    private Type type;
 
-    private MessageTemplate publishTemplate;
+    private Scope scope;
 
-    public DateTime timeValue() {
-        return null;
-    }
+    private static final DateTimeFormatter DATE_TYPE_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
 
-    public DateTime dateValue() {
-        return null;
-    }
+    private static final DateTimeFormatter TIME_TYPE_FORMATTER = DateTimeFormat.forPattern("HH:mm:ss");
 
-    private Class classType;
+    private List<AID> relatedAgentsIds = new ArrayList<AID>();
 
-    private Variable(Type type, Scope scope) {
-        switch (type) {
-            case BOOLEAN:
-                classType = Boolean.class;
-                value = false;
-                break;
-            case DATE:
-            case TIME:
-                classType = DateTime.class;
-                break;
-            case FLOAT: classType = Float.class;
-                break;
-            case INTEGER: classType = Integer.class;
-                break;
-            case STRING: classType = String.class;
-        }
-        switch (scope) {
-            case EXTERNAL:
-                this.scope = Scope.EXTERNAL;
-                break;
-            case LOCAL:
-                this.scope = Scope.LOCAL;
-                break;
-            case PUBLIC:
-                this.scope = Scope.PUBLIC;
-        }
-    }
+    private Agent agent;
 
     private String key;
 
     private MessageTemplate externalMessageTemplate;
 
+    private static String STORAGE_AGENT_NAME = "storage";
+
+    private AID storageAID = new AID(STORAGE_AGENT_NAME, AID.ISLOCALNAME);
+
+    long increment = 0;
+
+
+    public DateTime timeValue() {
+        verifyClassAndUpdateIfExternal();
+        return (DateTime) value;
+    }
+
+    public DateTime dateValue() {
+        return timeValue();
+    }
+
+    public Float floatValue() {
+        verifyClassAndUpdateIfExternal();
+        return (Float) value;
+    }
+
+    public Integer integerValue() {
+        verifyClassAndUpdateIfExternal();
+        return (Integer) value;
+    }
+
+    public String stringValue() {
+        verifyClassAndUpdateIfExternal();
+        return (String) value;
+    }
+
+    public Boolean booleanValue() {
+        verifyClassAndUpdateIfExternal();
+        return (Boolean) value;
+    }
+
     public static Variable create(Agent agent, String prop, String exernalProperty, Type type, Scope scope, String defaultVal, String... relatedAgents) {
-        Variable variable = new Variable(type, scope);
+        Variable variable = new Variable();
         variable.agent = agent;
         variable.key = prop;
+        variable.type = type;
+        variable.scope = scope;
 
-        if(relatedAgents != null) {
+        if ( relatedAgents != null ) {
             for (String relatedAgentId : relatedAgents) {
                 variable.relatedAgentsIds.add(new AID(relatedAgentId, AID.ISLOCALNAME));
             }
         }
 
-        variable.externalMessageTemplate =MessageTemplate.MatchOntology(exernalProperty);
+        variable.externalMessageTemplate = MessageTemplate.MatchOntology(exernalProperty);
 
+        variable.value = variable.deserialize(defaultVal);
+
+        variable.log(variable.toString());
         return variable;
 
     }
 
-   private List<AID> relatedAgentsIds = new ArrayList<AID>();
-
-    private Agent agent;
-
-    public void set(Object newValue){
-        log(newValue);
-        if(!newValue.getClass().equals(classType)){
+    public void set(Object newValue) {
+        if ( !type.assignedClass.equals(newValue.getClass()) ) {
             throw new IllegalArgumentException("Illegal value");
         }
+        sendVariableToStorage(newValue);
         value = newValue;
-        if(scope.equals(Scope.PUBLIC)){
-            //publish value
+        log(key + ": newValue! " + toString());
+        if ( scope.equals(Scope.PUBLIC) ) {
+            // publish value
             ACLMessage message = new ACLMessage(ACLMessage.INFORM);
-            for(AID a: relatedAgentsIds){
+            for (AID a : relatedAgentsIds) {
                 message.addReceiver(a);
             }
             message.setOntology(key);
-            message.setContent(value.toString());
+            message.setContent(serialize());
             agent.send(message);
+            log(key + ": publishing!");
         }
     }
 
-    public Boolean booleanValue(){
-        if(!value.getClass().equals(classType)){
-            throw new IllegalArgumentException();
+    private void sendVariableToStorage(Object newValue) {
+        if(value == null && newValue == null){
+            return;
         }
-        if(scope.equals(Scope.EXTERNAL)){
-            ACLMessage message;
-            while((message = agent.receive(externalMessageTemplate)) != null){
-                set(prepareValue(message.getContent()));
-            }
-
+        if(value != null && value.equals(newValue)){
+            return;
         }
 
-        return (Boolean)value;
+
+        ExtendedAgent ex = (ExtendedAgent) agent;
+
+        if(ex.getCurrentDate() == null){
+            return;
+        }
+
+        StringBuilder messageBuilder = new StringBuilder();
+        messageBuilder.append(ex.getInstance());
+        messageBuilder.append("#");
+        messageBuilder.append(Utils.DEFAULT_TIME_FORMATTER.print(ex.getCurrentDate()));
+        messageBuilder.append("#");
+        messageBuilder.append(key);
+        messageBuilder.append("#");
+        messageBuilder.append(serialize());
+        messageBuilder.append("#");
+        messageBuilder.append(newValue);
+        messageBuilder.append("#");
+        messageBuilder.append(increment++);
+
+        ACLMessage initSimulationMessage = new ACLMessage(ACLMessage.INFORM);
+        initSimulationMessage.setOntology("variable");
+        initSimulationMessage.addReceiver(storageAID);
+        initSimulationMessage.setContent(messageBuilder.toString());
+        agent.send(initSimulationMessage);
+
     }
 
-    private Object prepareValue(String content) {
+    private String serialize() {
+        return serialize(this.value);
+    }
 
+    private String serialize(Object value) {
+        if ( type == Type.BOOLEAN ) {
+            return Boolean.toString((Boolean) value);
+        }
+        if ( type == Type.STRING ) {
+            return (String) value;
+        }
+        if ( type == Type.FLOAT ) {
+            return Float.toString((Float) value);
+        }
+        if ( type == Type.INTEGER ) {
+            return Integer.toString((Integer) value);
+        }
+        if ( type == Type.DATE ) {
+            DATE_TYPE_FORMATTER.print((DateTime) value);
+        }
+        if ( type == Type.TIME ) {
+            TIME_TYPE_FORMATTER.print((DateTime) value);
+        }
+        throw new IllegalStateException();
+    }
 
-
+    private Object deserialize(String content) {
+        if ( type == Type.BOOLEAN ) {
+            return Boolean.parseBoolean(content);
+        }
+        if ( type == Type.STRING ) {
+            return content;
+        }
+        if ( type == Type.FLOAT ) {
+            return Float.parseFloat(content);
+        }
+        if ( type == Type.INTEGER ) {
+            return Integer.parseInt(content);
+        }
+        if ( type == Type.DATE ) {
+            return DATE_TYPE_FORMATTER.parseDateTime(content);
+        }
+        if ( type == Type.TIME ) {
+            return TIME_TYPE_FORMATTER.parseDateTime(content);
+        }
         return null;
     }
 
-    private Scope scope;
+    private void verifyClassAndUpdateIfExternal() {
+        if ( !type.assignedClass.equals(value.getClass()) ) {
+            throw new IllegalArgumentException();
+        }
+
+        if ( scope.equals(Scope.EXTERNAL) ) {
+            log(key + ": lookup!");
+            ACLMessage message;
+            while ((message = agent.receive(externalMessageTemplate)) != null) {
+                set(deserialize(message.getContent()));
+            }
+        }
+
+    }
+
+    private Variable() {
+    }
 
     public static enum Scope {
         LOCAL, EXTERNAL, PUBLIC
     };
 
     public static enum Type {
-        BOOLEAN, DATE, TIME, STRING, FLOAT, INTEGER
+        BOOLEAN(Boolean.class), DATE(DateTime.class), TIME(DateTime.class), STRING(String.class), FLOAT(Float.class), INTEGER(Integer.class);
+
+        private Type(Class clazz) {
+            assignedClass = clazz;
+        }
+
+        Class assignedClass;
     };
 
-    private void log(Object o){
-        System.err.println(o);
+    private static Logger log = org.apache.logging.log4j.LogManager.getLogger(Variable.class);
+
+    private void log(String o) {
+        log.info("LOG:V:" + agent.getLocalName() + ":" + o);
     }
 
+    @Override
+    public String toString() {
+
+        return ToStringBuilder.reflectionToString(this);
+    }
 }

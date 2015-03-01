@@ -36,3 +36,6 @@ local.properties
 *.iml
 jade/out
 jade/jade
+
+APDescription.txt
+MTPs-Main-Container.txt

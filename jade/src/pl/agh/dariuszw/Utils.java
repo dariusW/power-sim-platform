@@ -41,6 +41,7 @@ public class Utils {
     private static final String SIMULATION_MODEL_SUFFIX = ".smodel";
 
     private static final String AGENT_MODEL_SUFFIX = ".dmodel";
+    public static final DateTimeFormatter INIT_PARAM_DATE_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm");
 
     public static int ENVELOPE_DATE = 1;
 
@@ -207,6 +208,7 @@ public class Utils {
     }
 
     public static ACLMessage createKillMessage(Collection<AID> agents) {
+        agents.add(new AID("storage", AID.ISLOCALNAME));
         return Utils.MessageBuilder.createMessage().setPerformative(ACLMessage.CFP).setReceivers(new ArrayList<AID>(agents)).build();
     }
 

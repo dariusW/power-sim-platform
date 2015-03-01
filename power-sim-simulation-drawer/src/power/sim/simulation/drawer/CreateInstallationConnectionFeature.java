@@ -9,7 +9,6 @@ import org.eclipse.graphiti.mm.pictograms.Connection;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 
 import pssimulation.PSInstance;
-import pssimulation.PssimulationFactory;
 
 public class CreateInstallationConnectionFeature extends AbstractCreateConnectionFeature implements ICreateConnectionFeature {
 
@@ -43,7 +42,7 @@ public class CreateInstallationConnectionFeature extends AbstractCreateConnectio
         if ( source != null && target != null ) {
 
             AddConnectionContext addContext = new AddConnectionContext(context.getSourceAnchor(), context.getTargetAnchor());
-            addContext.setNewObject(PssimulationFactory.eINSTANCE.createPSHierarchy());
+            //óaddContext.setNewObject(PssimulationFactory.eINSTANCE.createPSHierarchy());
             newConnection = (Connection) getFeatureProvider().addIfPossible(addContext);
         }
         return newConnection;

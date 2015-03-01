@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pssimulation.PSInstance#getId <em>Id</em>}</li>
  *   <li>{@link pssimulation.PSInstance#getInitBehaviour <em>Init Behaviour</em>}</li>
  *   <li>{@link pssimulation.PSInstance#getModelClass <em>Model Class</em>}</li>
- *   <li>{@link pssimulation.PSInstance#getParent <em>Parent</em>}</li>
- *   <li>{@link pssimulation.PSInstance#getChildren <em>Children</em>}</li>
  *   <li>{@link pssimulation.PSInstance#getModelPath <em>Model Path</em>}</li>
  *   <li>{@link pssimulation.PSInstance#getName <em>Name</em>}</li>
  *   <li>{@link pssimulation.PSInstance#getIncomingConnections <em>Incoming Connections</em>}</li>
@@ -210,48 +208,6 @@ public interface PSInstance extends EObject {
      * @generated
      */
     EList<PSInstance> getSubinstance();
-
-    /**
-     * Returns the value of the '<em><b>Parent</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Parent</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Parent</em>' reference.
-     * @see #setParent(PSHierarchy)
-     * @see pssimulation.PssimulationPackage#getPSInstance_Parent()
-     * @model
-     * @generated
-     */
-    PSHierarchy getParent();
-
-    /**
-     * Sets the value of the '{@link pssimulation.PSInstance#getParent <em>Parent</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Parent</em>' reference.
-     * @see #getParent()
-     * @generated
-     */
-    void setParent(PSHierarchy value);
-
-    /**
-     * Returns the value of the '<em><b>Children</b></em>' reference list.
-     * The list contents are of type {@link pssimulation.PSHierarchy}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Children</em>' reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Children</em>' reference list.
-     * @see pssimulation.PssimulationPackage#getPSInstance_Children()
-     * @model
-     * @generated
-     */
-    EList<PSHierarchy> getChildren();
 
     /**
      * Returns the value of the '<em><b>Model Path</b></em>' attribute.

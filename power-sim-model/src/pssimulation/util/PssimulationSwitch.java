@@ -78,12 +78,6 @@ public class PssimulationSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case PssimulationPackage.PS_HIERARCHY: {
-                PSHierarchy psHierarchy = (PSHierarchy)theEObject;
-                T result = casePSHierarchy(psHierarchy);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
             case PssimulationPackage.PS_COMUNICATION: {
                 PSComunication psComunication = (PSComunication)theEObject;
                 T result = casePSComunication(psComunication);
@@ -121,21 +115,6 @@ public class PssimulationSwitch<T> extends Switch<T> {
      * @generated
      */
     public T casePSInstance(PSInstance object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>PS Hierarchy</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>PS Hierarchy</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T casePSHierarchy(PSHierarchy object) {
         return null;
     }
 

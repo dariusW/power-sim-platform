@@ -16,10 +16,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link pssimulation.PSSimulation#getId <em>Id</em>}</li>
  *   <li>{@link pssimulation.PSSimulation#getElement <em>Element</em>}</li>
- *   <li>{@link pssimulation.PSSimulation#getConnections <em>Connections</em>}</li>
  *   <li>{@link pssimulation.PSSimulation#getDescription <em>Description</em>}</li>
  *   <li>{@link pssimulation.PSSimulation#getRelations <em>Relations</em>}</li>
  *   <li>{@link pssimulation.PSSimulation#getName <em>Name</em>}</li>
+ *   <li>{@link pssimulation.PSSimulation#getSimulationStep <em>Simulation Step</em>}</li>
+ *   <li>{@link pssimulation.PSSimulation#getSimulationStartDate <em>Simulation Start Date</em>}</li>
+ *   <li>{@link pssimulation.PSSimulation#getSimulationEndDate <em>Simulation End Date</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +57,85 @@ public interface PSSimulation extends EObject {
     void setName(String value);
 
     /**
+     * Returns the value of the '<em><b>Simulation Step</b></em>' attribute.
+     * The default value is <code>"PT1M"</code>.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Simulation Step</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Simulation Step</em>' attribute.
+     * @see #setSimulationStep(String)
+     * @see pssimulation.PssimulationPackage#getPSSimulation_SimulationStep()
+     * @model default="PT1M"
+     * @generated
+     */
+    String getSimulationStep();
+
+    /**
+     * Sets the value of the '{@link pssimulation.PSSimulation#getSimulationStep <em>Simulation Step</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Simulation Step</em>' attribute.
+     * @see #getSimulationStep()
+     * @generated
+     */
+    void setSimulationStep(String value);
+
+    /**
+     * Returns the value of the '<em><b>Simulation Start Date</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Simulation Start Date</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Simulation Start Date</em>' attribute.
+     * @see #setSimulationStartDate(String)
+     * @see pssimulation.PssimulationPackage#getPSSimulation_SimulationStartDate()
+     * @model
+     * @generated
+     */
+    String getSimulationStartDate();
+
+    /**
+     * Sets the value of the '{@link pssimulation.PSSimulation#getSimulationStartDate <em>Simulation Start Date</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Simulation Start Date</em>' attribute.
+     * @see #getSimulationStartDate()
+     * @generated
+     */
+    void setSimulationStartDate(String value);
+
+    /**
+     * Returns the value of the '<em><b>Simulation End Date</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Simulation End Date</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Simulation End Date</em>' attribute.
+     * @see #setSimulationEndDate(String)
+     * @see pssimulation.PssimulationPackage#getPSSimulation_SimulationEndDate()
+     * @model
+     * @generated
+     */
+    String getSimulationEndDate();
+
+    /**
+     * Sets the value of the '{@link pssimulation.PSSimulation#getSimulationEndDate <em>Simulation End Date</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Simulation End Date</em>' attribute.
+     * @see #getSimulationEndDate()
+     * @generated
+     */
+    void setSimulationEndDate(String value);
+
+    /**
      * Returns the value of the '<em><b>Element</b></em>' containment reference list.
      * The list contents are of type {@link pssimulation.PSInstance}.
      * <!-- begin-user-doc -->
@@ -69,22 +150,6 @@ public interface PSSimulation extends EObject {
      * @generated
      */
     EList<PSInstance> getElement();
-
-    /**
-     * Returns the value of the '<em><b>Connections</b></em>' containment reference list.
-     * The list contents are of type {@link pssimulation.PSHierarchy}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Connections</em>' containment reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Connections</em>' containment reference list.
-     * @see pssimulation.PssimulationPackage#getPSSimulation_Connections()
-     * @model containment="true"
-     * @generated
-     */
-    EList<PSHierarchy> getConnections();
 
     /**
      * Returns the value of the '<em><b>Description</b></em>' attribute.

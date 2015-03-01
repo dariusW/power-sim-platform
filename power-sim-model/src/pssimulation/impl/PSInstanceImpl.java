@@ -3,21 +3,14 @@
 package pssimulation.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import pssimulation.PSComunication;
-import pssimulation.PSHierarchy;
 import pssimulation.PSInstance;
 import pssimulation.PssimulationPackage;
 
@@ -31,8 +24,6 @@ import pssimulation.PssimulationPackage;
  *   <li>{@link pssimulation.impl.PSInstanceImpl#getId <em>Id</em>}</li>
  *   <li>{@link pssimulation.impl.PSInstanceImpl#getInitBehaviour <em>Init Behaviour</em>}</li>
  *   <li>{@link pssimulation.impl.PSInstanceImpl#getModelClass <em>Model Class</em>}</li>
- *   <li>{@link pssimulation.impl.PSInstanceImpl#getParent <em>Parent</em>}</li>
- *   <li>{@link pssimulation.impl.PSInstanceImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link pssimulation.impl.PSInstanceImpl#getModelPath <em>Model Path</em>}</li>
  *   <li>{@link pssimulation.impl.PSInstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link pssimulation.impl.PSInstanceImpl#getIncomingConnections <em>Incoming Connections</em>}</li>
@@ -104,26 +95,6 @@ public class PSInstanceImpl extends MinimalEObjectImpl.Container implements PSIn
      * @ordered
      */
     protected String modelClass = MODEL_CLASS_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getParent()
-     * @generated
-     * @ordered
-     */
-    protected PSHierarchy parent;
-
-    /**
-     * The cached value of the '{@link #getChildren() <em>Children</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getChildren()
-     * @generated
-     * @ordered
-     */
-    protected EList<PSHierarchy> children;
 
     /**
      * The default value of the '{@link #getModelPath() <em>Model Path</em>}' attribute.
@@ -387,56 +358,6 @@ public class PSInstanceImpl extends MinimalEObjectImpl.Container implements PSIn
      * <!-- end-user-doc -->
      * @generated
      */
-    public PSHierarchy getParent() {
-        if (parent != null && parent.eIsProxy()) {
-            InternalEObject oldParent = (InternalEObject)parent;
-            parent = (PSHierarchy)eResolveProxy(oldParent);
-            if (parent != oldParent) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, PssimulationPackage.PS_INSTANCE__PARENT, oldParent, parent));
-            }
-        }
-        return parent;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public PSHierarchy basicGetParent() {
-        return parent;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setParent(PSHierarchy newParent) {
-        PSHierarchy oldParent = parent;
-        parent = newParent;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, PssimulationPackage.PS_INSTANCE__PARENT, oldParent, parent));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EList<PSHierarchy> getChildren() {
-        if (children == null) {
-            children = new EObjectResolvingEList<PSHierarchy>(PSHierarchy.class, this, PssimulationPackage.PS_INSTANCE__CHILDREN);
-        }
-        return children;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public String getModelPath() {
         return modelPath;
     }
@@ -467,11 +388,6 @@ public class PSInstanceImpl extends MinimalEObjectImpl.Container implements PSIn
                 return getInitBehaviour();
             case PssimulationPackage.PS_INSTANCE__MODEL_CLASS:
                 return getModelClass();
-            case PssimulationPackage.PS_INSTANCE__PARENT:
-                if (resolve) return getParent();
-                return basicGetParent();
-            case PssimulationPackage.PS_INSTANCE__CHILDREN:
-                return getChildren();
             case PssimulationPackage.PS_INSTANCE__MODEL_PATH:
                 return getModelPath();
             case PssimulationPackage.PS_INSTANCE__NAME:
@@ -506,13 +422,6 @@ public class PSInstanceImpl extends MinimalEObjectImpl.Container implements PSIn
                 return;
             case PssimulationPackage.PS_INSTANCE__MODEL_CLASS:
                 setModelClass((String)newValue);
-                return;
-            case PssimulationPackage.PS_INSTANCE__PARENT:
-                setParent((PSHierarchy)newValue);
-                return;
-            case PssimulationPackage.PS_INSTANCE__CHILDREN:
-                getChildren().clear();
-                getChildren().addAll((Collection<? extends PSHierarchy>)newValue);
                 return;
             case PssimulationPackage.PS_INSTANCE__MODEL_PATH:
                 setModelPath((String)newValue);
@@ -556,12 +465,6 @@ public class PSInstanceImpl extends MinimalEObjectImpl.Container implements PSIn
             case PssimulationPackage.PS_INSTANCE__MODEL_CLASS:
                 setModelClass(MODEL_CLASS_EDEFAULT);
                 return;
-            case PssimulationPackage.PS_INSTANCE__PARENT:
-                setParent((PSHierarchy)null);
-                return;
-            case PssimulationPackage.PS_INSTANCE__CHILDREN:
-                getChildren().clear();
-                return;
             case PssimulationPackage.PS_INSTANCE__MODEL_PATH:
                 setModelPath(MODEL_PATH_EDEFAULT);
                 return;
@@ -598,10 +501,6 @@ public class PSInstanceImpl extends MinimalEObjectImpl.Container implements PSIn
                 return INIT_BEHAVIOUR_EDEFAULT == null ? initBehaviour != null : !INIT_BEHAVIOUR_EDEFAULT.equals(initBehaviour);
             case PssimulationPackage.PS_INSTANCE__MODEL_CLASS:
                 return MODEL_CLASS_EDEFAULT == null ? modelClass != null : !MODEL_CLASS_EDEFAULT.equals(modelClass);
-            case PssimulationPackage.PS_INSTANCE__PARENT:
-                return parent != null;
-            case PssimulationPackage.PS_INSTANCE__CHILDREN:
-                return children != null && !children.isEmpty();
             case PssimulationPackage.PS_INSTANCE__MODEL_PATH:
                 return MODEL_PATH_EDEFAULT == null ? modelPath != null : !MODEL_PATH_EDEFAULT.equals(modelPath);
             case PssimulationPackage.PS_INSTANCE__NAME:
