@@ -1,7 +1,9 @@
 package pl.agh.dariuszw.variable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.logging.log4j.Logger;
@@ -21,15 +23,25 @@ import pl.agh.dariuszw.Utils;
  */
 public class Variable {
 
+    private static Map<String, Map<String, Variable>> allInstancesMap = new HashMap<String, Map<String, Variable>>();
+
+    public static Variable getVariable(String instanceID, String variableKey){
+        Map<String, Variable> vMap = allInstancesMap.get(instanceID);
+        if(vMap == null){
+            return null;
+        }
+        return vMap.get(variableKey);
+    }
+
     private Object value;
 
     private Type type;
 
     private Scope scope;
 
-    private static final DateTimeFormatter DATE_TYPE_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+    public static final DateTimeFormatter DATE_TYPE_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
 
-    private static final DateTimeFormatter TIME_TYPE_FORMATTER = DateTimeFormat.forPattern("HH:mm:ss");
+    public static final DateTimeFormatter TIME_TYPE_FORMATTER = DateTimeFormat.forPattern("HH:mm:ss");
 
     private List<AID> relatedAgentsIds = new ArrayList<AID>();
 
@@ -93,6 +105,14 @@ public class Variable {
         variable.value = variable.deserialize(defaultVal);
 
         variable.log(variable.toString());
+
+        Map<String, Variable> vList = allInstancesMap.get(agent.getLocalName());
+        if(vList == null){
+            vList = new HashMap<String, Variable>();
+            allInstancesMap.put(agent.getClass().getName(), vList);
+        }
+        vList.put(prop, variable);
+
         return variable;
 
     }
@@ -217,6 +237,14 @@ public class Variable {
     }
 
     private Variable() {
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public Type getType() {
+        return type;
     }
 
     public static enum Scope {

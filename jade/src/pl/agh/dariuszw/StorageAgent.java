@@ -1,7 +1,6 @@
 package pl.agh.dariuszw;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +11,10 @@ import org.joda.time.MutablePeriod;
 import pl.agh.dariuszw.db.DatabaseManager;
 import pl.agh.dariuszw.gui.ChartSelectionGUI;
 import pl.agh.dariuszw.gui.PowerChartGUI;
+import pl.agh.dariuszw.gui.StateChartGUI;
 import pl.agh.dariuszw.gui.SummaryGUI;
+import pl.agh.dariuszw.gui.VariableChartGUI;
+import pl.agh.dariuszw.variable.Variable;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -42,6 +44,8 @@ public class StorageAgent extends Agent {
     private Date simulationEnd;
 
     ChartSelectionGUI chartSelectionGUI = new ChartSelectionGUI(this);
+
+    private SummaryGUI summary = null;
 
     @Override
     protected void setup() {
@@ -84,12 +88,18 @@ public class StorageAgent extends Agent {
                             storePowerData(incomingMessage.getContent());
                         } else if ( "powerChart".equals(incomingMessage.getOntology()) ) {
                             buildPowerChart(incomingMessage.getContent());
+                        } else if ( "stateChart".equals(incomingMessage.getOntology()) ) {
+                            buildStateChart(incomingMessage.getContent());
+                        } else if ( "variableChart".equals(incomingMessage.getOntology()) ) {
+                            buildVariableChart(incomingMessage.getContent());
                         }
 
                     } else {
                         if ( shutDown ) {
-                            new SummaryGUI(StorageAgent.this).showGui();
-
+                            if(summary == null) {
+                                summary = new SummaryGUI(StorageAgent.this);
+                                summary.showGui();
+                            }
                             // close when X is pressed in summary window
                             // doDelete();
                         }
@@ -225,6 +235,36 @@ public class StorageAgent extends Agent {
 
     private Map<String, PowerChartGUI> powerCharts = new ConcurrentHashMap<String, PowerChartGUI>();
 
+    private Map<String, StateChartGUI> stateCharts = new ConcurrentHashMap<String, StateChartGUI>();
+
+    private Map<String, VariableChartGUI> variableCharts = new ConcurrentHashMap<String, VariableChartGUI>();
+
+    private void buildVariableChart(String content) {
+        String[] parts = content.split("#");
+        if ( parts.length != 2 ) {
+            throw new IllegalStateException("Variable message is invalid!" + content);
+        }
+        String instanceID = parts[0];
+        String variableKey = parts[1];
+
+        VariableChartGUI chart = variableCharts.get(instanceID);
+        if ( chart == null ) {
+
+            Map<DateTime, String> dataMap = databaseManager.collectVariableData(simulationID, executionDate, instanceID, variableKey);
+
+            System.err.println(Variable.getVariable(instanceID, variableKey));
+
+            chart = new VariableChartGUI(instanceID, Variable.getVariable(instanceID, variableKey), this, dataMap);
+            // System.err.println("POWER ITEMS FOUND SIZE " + dataMap.size());
+
+            // for (Map.Entry<DateTime, String> item : dataMap.entrySet()) {
+            // chart.appendValue(item.getKey(), item.getValue());
+            // }
+            variableCharts.put(instanceID, chart);
+            chart.showGUI();
+        }
+    }
+
     private void buildPowerChart(String instanceID) {
         PowerChartGUI chart = powerCharts.get(instanceID);
         if ( chart == null ) {
@@ -232,7 +272,7 @@ public class StorageAgent extends Agent {
 
             Map<DateTime, PowerStamp> dataMap = databaseManager.collectPowerData(simulationID, executionDate, instanceID);
 
-            System.err.println("POWER ITEMS FOUND SIZE "+dataMap.size());
+            // System.err.println("POWER ITEMS FOUND SIZE " + dataMap.size());
 
             for (Map.Entry<DateTime, PowerStamp> item : dataMap.entrySet()) {
                 chart.appendPower(item.getKey(), item.getValue().power);
@@ -245,6 +285,30 @@ public class StorageAgent extends Agent {
 
     public void disposePowerChart(String instanceID) {
         powerCharts.remove(instanceID);
+    }
+
+    private void buildStateChart(String instanceID) {
+        StateChartGUI chart = stateCharts.get(instanceID);
+        if ( chart == null ) {
+            chart = new StateChartGUI(instanceID, this, ExtendedAgent.getStates(instanceID));
+
+            Map<DateTime, String> dataMap = databaseManager.collectStateChanges(simulationID, executionDate, instanceID);
+            //
+            //
+            for (Map.Entry<DateTime, String> item : dataMap.entrySet()) {
+                chart.appendState(item.getKey(), item.getValue());
+            }
+            stateCharts.put(instanceID, chart);
+            chart.showGUI();
+        }
+    }
+
+    public void disposeStateChart(String instanceID) {
+        stateCharts.remove(instanceID);
+    }
+
+    public void disposeVariableChart(String instanceID) {
+        variableCharts.remove(instanceID);
     }
 
     public static class PowerStamp {
@@ -267,4 +331,22 @@ public class StorageAgent extends Agent {
         send(message);
 
     }
+
+    public void openStateChart(String instanceID) {
+        ACLMessage message = new ACLMessage(ACLMessage.INFORM);
+        message.setOntology("stateChart");
+        message.setContent(instanceID);
+        message.addReceiver(getAID());
+        send(message);
+
+    }
+
+    public void openVariableChart(String instanceID, String variableKey) {
+        ACLMessage message = new ACLMessage(ACLMessage.INFORM);
+        message.setOntology("variableChart");
+        message.setContent(instanceID + "#" + variableKey);
+        message.addReceiver(getAID());
+        send(message);
+    }
+
 }

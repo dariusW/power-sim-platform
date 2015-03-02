@@ -361,4 +361,78 @@ public final class DatabaseManager {
 
         return transferMap;
     }
+
+    private static final String STATE_SELECT = "SELECT time_id, state FROM state_log WHERE simulation_id = ? AND execution_date = ? AND instance_id = ?";
+
+    public Map<DateTime, String> collectStateChanges(String simulationID, Date executionDate, String instanceID) {
+        Map<DateTime, String> transferMap = new TreeMap<DateTime, String>();
+        PreparedStatement select = null;
+        try {
+            select = connection.prepareStatement(STATE_SELECT);
+            select.setString(1, simulationID);
+            select.setString(3, instanceID);
+            select.setTimestamp(2, new Timestamp(executionDate.getTime()));
+
+            ResultSet result = select.executeQuery();
+            while (result.next()) {
+                Timestamp time = result.getTimestamp(1);
+                String state = result.getString(2);
+                DateTime dateTime = new DateTime(time.getTime());
+
+                transferMap.put(dateTime, state);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if ( select != null ) {
+                try {
+                    select.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return transferMap;
+    }
+
+    private static final String VARIABLE_SELECT = "SELECT time_id, NEW_VALUE FROM VARIABLE_LOG WHERE simulation_id = ? AND execution_date = ? AND instance_id = ? AND VARIABLE_ID = ?";
+
+    public Map<DateTime, String> collectVariableData(String simulationID, Date executionDate, String instanceID, String variableID) {
+        Map<DateTime, String> transferMap = new TreeMap<DateTime, String>();
+        PreparedStatement select = null;
+        try {
+            select = connection.prepareStatement(VARIABLE_SELECT);
+            select.setString(1, simulationID);
+            select.setString(3, instanceID);
+            select.setString(4, variableID);
+            select.setTimestamp(2, new Timestamp(executionDate.getTime()));
+
+            ResultSet result = select.executeQuery();
+            while (result.next()) {
+                Timestamp time = result.getTimestamp(1);
+                String value = result.getString(2);
+                DateTime dateTime = new DateTime(time.getTime());
+
+                transferMap.put(dateTime, value);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if ( select != null ) {
+                try {
+                    select.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return transferMap;
+
+    }
 }

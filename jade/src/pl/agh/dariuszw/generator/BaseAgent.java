@@ -12,7 +12,6 @@ import pl.agh.dariuszw.SimBehaviour;
 import pl.agh.dariuszw.Utils;
 import pl.agh.dariuszw.variable.Variable;
 import jade.core.AID;
-import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -21,7 +20,7 @@ import jade.lang.acl.MessageTemplate;
 /**
  * Created by dariuszw on 2014-12-23.
  */
-public class BaseAgent extends Agent implements ExtendedAgent {
+public class BaseAgent extends ExtendedAgent {
 
     private static String STORAGE_AGENT_NAME = "storage";
 
@@ -79,12 +78,10 @@ public class BaseAgent extends Agent implements ExtendedAgent {
         super.takeDown();
     }
 
-    @Override
     public DateTime getCurrentDate() {
         return currentTime;
     }
 
-    @Override
     public String getInstance() {
         return instanceID;
     }

@@ -146,6 +146,17 @@ public class SimulationContextGenerator {
             writer.append(inst.getSuperinstance().getId());
             writer.append("\";\n\n");
         }
+
+        for(PSState state :agent.getStates()){
+            writer.append("         registerState(\"");
+            writer.append(agent.getPackage());
+            writer.append(".");
+            writer.append(agent.getId());
+            writer.append(inst.getId());
+            writer.append("\",\"");
+            writer.append(state.getName());
+            writer.append("\");\n\n");
+        }
     }
 
     private static void appendStart(StringWriter writer) {

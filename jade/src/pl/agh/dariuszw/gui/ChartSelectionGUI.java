@@ -68,6 +68,27 @@ public class ChartSelectionGUI extends JFrame {
                 }
             }
         });
+        showStateChartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String instanceID = (String) instanceComboBoxModel.getSelectedItem();
+
+                if(instanceID != null){
+                    storageAgent.openStateChart(instanceID);
+                }
+            }
+        });
+        showVariableChartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String instanceID = (String) instanceComboBoxModel.getSelectedItem();
+                String variableKey = (String) variableComboBox.getModel().getSelectedItem();
+
+                if(instanceID != null && variableKey != null){
+                    storageAgent.openVariableChart(instanceID, variableKey);
+                }
+            }
+        });
 
         getContentPane().add(p, BorderLayout.CENTER);
 
