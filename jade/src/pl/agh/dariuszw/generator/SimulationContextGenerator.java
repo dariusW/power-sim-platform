@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +35,9 @@ public class SimulationContextGenerator {
 
         try {
             String p = (new File(".")).getCanonicalPath();
-            FileReader reader = new FileReader(p + "/src/pl/agh/dariuszw/generator/BaseAgent.java");
+
+
+            InputStreamReader reader = new InputStreamReader(SimulationContextGenerator.class.getClassLoader().getResourceAsStream("BaseAgent.java"));
             if ( reader == null || !reader.ready() ) {
                 throw new IllegalStateException();
             }
@@ -106,6 +109,7 @@ public class SimulationContextGenerator {
 
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException("Generation failed");
         }
 
     }

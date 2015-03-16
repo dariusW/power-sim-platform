@@ -50,6 +50,7 @@ public class Utils {
     public static int ENVELOPE_FLOAT = 3;
 
     public static DateTimeFormatter DEFAULT_TIME_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+    public static DateTimeFormatter DEFAULT_TIME2_FORMATTER = DateTimeFormat.forPattern("HH:mm:ss");
 
     public static final AID ENGINE_AGENT_ID = new AID("engine", AID.ISLOCALNAME);
 

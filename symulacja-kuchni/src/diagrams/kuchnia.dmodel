@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pl.agh:PSAgent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pl.agh="powerSim" package="agh" id="kuchnia" name="kuchnia">
+  <start name="START" transitions="//@transactions.0" id="start">
+    <onStep/>
+    <onEntry/>
+    <onExit/>
+    <onInit onAction=""/>
+  </start>
+  <states id="default">
+    <onStep onAction=""/>
+    <onEntry onAction=""/>
+    <onExit onAction=""/>
+  </states>
+  <transactions condition="return true;" source="//@start" target="//@states.0"/>
+</pl.agh:PSAgent>

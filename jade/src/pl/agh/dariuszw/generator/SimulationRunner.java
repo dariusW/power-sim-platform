@@ -21,8 +21,8 @@ public class SimulationRunner {
     private static final String BOOT = " jade.Boot -gui -agents storage:pl.agh.dariuszw.StorageAgent();engine:pl.agh.dariuszw.ClockAgent(simulation=";
     private static final String P1 = "simulationStep=PT1H,startTime=2015-01-01T10:00,endTime=2015-01-03T00:00,";
 
-    public static void run(PSSimulation simulation, String path) {
-        StringBuilder whole = new StringBuilder(CLASSPATH.replace(":", File.pathSeparator).replace("./", BASE_PATH));
+    public static void run(PSSimulation simulation, String path, String basePath) {
+        StringBuilder whole = new StringBuilder(CLASSPATH.replace(":", File.pathSeparator).replace("./", basePath));
         whole.append(path);
         whole.append(BOOT);
         whole.append(simulation.getId());

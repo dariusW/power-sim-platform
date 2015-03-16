@@ -4,15 +4,15 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_ThpnwGxZEeS86-QB0XH1sQ" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_Thq14GxZEeS86-QB0XH1sQ" type="7001">
       <children xmi:type="notation:Node" xmi:id="_QvBkQHKdEeSRvZ8o0Nw3Lg" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSAgent/id"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//AgentModel/id"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_QvBkQXKdEeSRvZ8o0Nw3Lg"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_g_HuoHKdEeSRvZ8o0Nw3Lg" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSAgent/package"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//AgentModel/package"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_g_IVsHKdEeSRvZ8o0Nw3Lg"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_gnNtEI4JEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSAgent/name"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//AgentModel/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_gnNtEY4JEeSUBZZr0RetxQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Thq14WxZEeS86-QB0XH1sQ"/>
@@ -26,8 +26,8 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_Thq152xZEeS86-QB0XH1sQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Thq16GxZEeS86-QB0XH1sQ"/>
     </children>
-    <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSAgent"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ThoZoGxZEeS86-QB0XH1sQ" x="390" y="20" width="140"/>
+    <element xmi:type="ecore:EClass" href="psplatform.ecore#//AgentModel"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ThoZoGxZEeS86-QB0XH1sQ" x="455" y="30" width="140"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_UswwAGxZEeS86-QB0XH1sQ" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_UswwAmxZEeS86-QB0XH1sQ" type="5001"/>
@@ -43,18 +43,18 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_UsxXF2xZEeS86-QB0XH1sQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_UsxXGGxZEeS86-QB0XH1sQ"/>
     </children>
-    <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSStart"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UswwAWxZEeS86-QB0XH1sQ" x="220" y="310" width="101"/>
+    <element xmi:type="ecore:EClass" href="psplatform.ecore#//Start"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UswwAWxZEeS86-QB0XH1sQ" x="295" y="375" width="101"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_VgCnEGxZEeS86-QB0XH1sQ" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_VgCnEmxZEeS86-QB0XH1sQ" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_VgCnE2xZEeS86-QB0XH1sQ" type="7001">
       <children xmi:type="notation:Node" xmi:id="_9L9QwGxbEeS86-QB0XH1sQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSState/name"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//State/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_9L9QwWxbEeS86-QB0XH1sQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_h543YI8xEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSState/id"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//State/id"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_h543YY8xEeSUBZZr0RetxQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_VgCnFGxZEeS86-QB0XH1sQ"/>
@@ -71,8 +71,8 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_VgDOJGxZEeS86-QB0XH1sQ"/>
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_aUUScLI2EeSErqv6jQd-dQ" value="0.16"/>
     </children>
-    <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSState"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VgCnEWxZEeS86-QB0XH1sQ" x="220" y="160"/>
+    <element xmi:type="ecore:EClass" href="psplatform.ecore#//State"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VgCnEWxZEeS86-QB0XH1sQ" x="295" y="225"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_Whh5QGxZEeS86-QB0XH1sQ" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_WhigUGxZEeS86-QB0XH1sQ" type="5001"/>
@@ -96,13 +96,13 @@
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_qXsZko4SEeSUBZZr0RetxQ" value="0.2033898305084746"/>
     </children>
     <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSTransition"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Whh5QWxZEeS86-QB0XH1sQ" x="515" y="305"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Whh5QWxZEeS86-QB0XH1sQ" x="435" y="320"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_svtZ0I4SEeSUBZZr0RetxQ" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_svtZ0o4SEeSUBZZr0RetxQ" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_svtZ044SEeSUBZZr0RetxQ" type="7001">
       <children xmi:type="notation:Node" xmi:id="_wlBrkI8wEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSBehaviour/onAction"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//AbstractBehaviour/onAction"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_wlBrkY8wEeSUBZZr0RetxQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_svtZ1I4SEeSUBZZr0RetxQ"/>
@@ -116,30 +116,30 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_svtZ2o4SEeSUBZZr0RetxQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_svtZ244SEeSUBZZr0RetxQ"/>
     </children>
-    <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSBehaviour"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_svtZ0Y4SEeSUBZZr0RetxQ" x="20" y="25"/>
+    <element xmi:type="ecore:EClass" href="psplatform.ecore#//AbstractBehaviour"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_svtZ0Y4SEeSUBZZr0RetxQ" x="50" y="90"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_x8kqII8sEeSUBZZr0RetxQ" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_x8lRMI8sEeSUBZZr0RetxQ" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_x8lRMY8sEeSUBZZr0RetxQ" type="7001">
       <children xmi:type="notation:Node" xmi:id="_NxMAkI8tEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSVariable/type"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//Variable/type"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_NxMAkY8tEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_e-Kp8I8tEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSVariable/scope"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//Variable/scope"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_e-LRAI8tEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_C0B6AI8uEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSVariable/key"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//Variable/key"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_C0B6AY8uEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_KdXC4I8uEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSVariable/value"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//Variable/value"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_KdXC4Y8uEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_gN-dQI8zEeSUBZZr0RetxQ" type="3001">
-        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//PSVariable/default"/>
+        <element xmi:type="ecore:EAttribute" href="psplatform.ecore#//Variable/default"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_gN-dQY8zEeSUBZZr0RetxQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_x8lRMo8sEeSUBZZr0RetxQ"/>
@@ -153,34 +153,34 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_x8lROI8sEeSUBZZr0RetxQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_x8lROY8sEeSUBZZr0RetxQ"/>
     </children>
-    <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSVariable"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x8kqIY8sEeSUBZZr0RetxQ" x="580" y="15"/>
+    <element xmi:type="ecore:EClass" href="psplatform.ecore#//Variable"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_x8kqIY8sEeSUBZZr0RetxQ" x="655" y="90"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_1A9oMI8sEeSUBZZr0RetxQ" type="2005" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_1A-PQI8sEeSUBZZr0RetxQ" type="5005"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_1A-PQY8sEeSUBZZr0RetxQ" type="7011">
       <children xmi:type="notation:Node" xmi:id="_BaeikI8tEeSUBZZr0RetxQ" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableType/Date"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableType/Date"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_BaeikY8tEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_EXKWII8tEeSUBZZr0RetxQ" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableType/Integer"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableType/Integer"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_EXKWIY8tEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_Fc9gkI8tEeSUBZZr0RetxQ" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableType/Float"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableType/Float"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Fc9gkY8tEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_ful00JqzEeSlaIZ92Y667A" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableType/Time"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableType/Time"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ful00ZqzEeSlaIZ92Y667A"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_C-qQILFxEeSRsvUGr5FRMw" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableType/Boolean"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableType/Boolean"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_C-qQIbFxEeSRsvUGr5FRMw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_FV-s0LFxEeSRsvUGr5FRMw" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableType/String"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableType/String"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_FV-s0bFxEeSRsvUGr5FRMw"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_1A-PQo8sEeSUBZZr0RetxQ"/>
@@ -192,22 +192,22 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_1A-PRo8sEeSUBZZr0RetxQ"/>
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_IlwdgY8tEeSUBZZr0RetxQ" value="0.15789473684210525"/>
     </children>
-    <element xmi:type="ecore:EEnum" href="psplatform.ecore#//PSVariableType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1A9oMY8sEeSUBZZr0RetxQ" x="760" y="25" width="110" height="136"/>
+    <element xmi:type="ecore:EEnum" href="psplatform.ecore#//VariableType"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1A9oMY8sEeSUBZZr0RetxQ" x="675" y="215" width="110" height="136"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_ZgSsAI8tEeSUBZZr0RetxQ" type="2005" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_ZgTTEI8tEeSUBZZr0RetxQ" type="5005"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_ZgTTEY8tEeSUBZZr0RetxQ" type="7011">
       <children xmi:type="notation:Node" xmi:id="_cin0kI8tEeSUBZZr0RetxQ" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableScope/External"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableScope/External"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_cin0kY8tEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_dDXKII8tEeSUBZZr0RetxQ" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableScope/Local"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableScope/Local"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_dDXKIY8tEeSUBZZr0RetxQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_dn-TEI8tEeSUBZZr0RetxQ" type="3009">
-        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//PSVariableScope/Public"/>
+        <element xmi:type="ecore:EEnumLiteral" href="psplatform.ecore#//VariableScope/Public"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_dn-TEY8tEeSUBZZr0RetxQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_ZgTTEo8tEeSUBZZr0RetxQ"/>
@@ -217,8 +217,8 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_ZgTTFY8tEeSUBZZr0RetxQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_ZgTTFo8tEeSUBZZr0RetxQ"/>
     </children>
-    <element xmi:type="ecore:EEnum" href="psplatform.ecore#//PSVariableScope"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZgSsAY8tEeSUBZZr0RetxQ" x="755" y="180" width="120" height="76"/>
+    <element xmi:type="ecore:EEnum" href="psplatform.ecore#//VariableScope"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZgSsAY8tEeSUBZZr0RetxQ" x="670" y="355" width="120" height="76"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_5HW5AI8wEeSUBZZr0RetxQ" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_5HW5Ao8wEeSUBZZr0RetxQ" type="5001"/>
@@ -234,50 +234,54 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_5HXgFo8wEeSUBZZr0RetxQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_5HXgF48wEeSUBZZr0RetxQ"/>
     </children>
-    <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSSingleBehaviour"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5HW5AY8wEeSUBZZr0RetxQ" x="25" y="165"/>
+    <element xmi:type="ecore:EClass" href="psplatform.ecore#//OneTimeBehaviour"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5HW5AY8wEeSUBZZr0RetxQ" x="55" y="230"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_9tAOcI8wEeSUBZZr0RetxQ" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_9tAOco8wEeSUBZZr0RetxQ" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_9tA1gI8wEeSUBZZr0RetxQ" type="7001">
       <styles xmi:type="notation:SortingStyle" xmi:id="_9tA1gY8wEeSUBZZr0RetxQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_9tA1go8wEeSUBZZr0RetxQ"/>
+      <layoutConstraint xmi:type="notation:Ratio" xmi:id="_FE8jQMHwEeShP-SOFUnIaA" value="0.23076923076923078"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_9tA1g48wEeSUBZZr0RetxQ" type="7002">
       <styles xmi:type="notation:SortingStyle" xmi:id="_9tA1hI8wEeSUBZZr0RetxQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_9tA1hY8wEeSUBZZr0RetxQ"/>
+      <layoutConstraint xmi:type="notation:Ratio" xmi:id="_FE8jQcHwEeShP-SOFUnIaA" value="0.23076923076923078"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_9tA1ho8wEeSUBZZr0RetxQ" type="7003">
       <styles xmi:type="notation:SortingStyle" xmi:id="_9tA1h48wEeSUBZZr0RetxQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_9tA1iI8wEeSUBZZr0RetxQ"/>
+      <layoutConstraint xmi:type="notation:Ratio" xmi:id="_FE8jQsHwEeShP-SOFUnIaA" value="0.23076923076923078"/>
     </children>
-    <element xmi:type="ecore:EClass" href="psplatform.ecore#//PSContinuousBehaviour"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9tAOcY8wEeSUBZZr0RetxQ" x="200" y="30"/>
+    <element xmi:type="ecore:EClass" href="psplatform.ecore#//CyclicBehaviour"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9tAOcY8wEeSUBZZr0RetxQ" x="300" y="95"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_S4of8WxZEeS86-QB0XH1sQ"/>
   <element xmi:type="ecore:EPackage" href="psplatform.ecore#/"/>
   <edges xmi:type="notation:Connector" xmi:id="_8HY28Gy_EeS86-QB0XH1sQ" type="4003" source="_ThnykGxZEeS86-QB0XH1sQ" target="_UswwAGxZEeS86-QB0XH1sQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_8HY282y_EeS86-QB0XH1sQ" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_8HY29Gy_EeS86-QB0XH1sQ" x="-12" y="-2"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8HY29Gy_EeS86-QB0XH1sQ" x="-117" y="-8"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_8HZeAGy_EeS86-QB0XH1sQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_8HZeAWy_EeS86-QB0XH1sQ" x="-15" y="-3"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8HZeAWy_EeS86-QB0XH1sQ" x="5"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_8HY28Wy_EeS86-QB0XH1sQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSAgent/start"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8HY28my_EeS86-QB0XH1sQ" points="[0, 0, -414, -148]$[339, 147, -75, -1]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8HasIGy_EeS86-QB0XH1sQ" id="(0.8867924528301887,1.0)"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//AgentModel/startState"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8HY28my_EeS86-QB0XH1sQ" points="[0, 2, 227, -280]$[0, 282, 227, 0]$[-176, 282, 51, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8HasIGy_EeS86-QB0XH1sQ" id="(0.8357142857142857,0.978021978021978)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_HX9zUGzAEeS86-QB0XH1sQ" type="4003" source="_ThnykGxZEeS86-QB0XH1sQ" target="_VgCnEGxZEeS86-QB0XH1sQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_HX-aYGzAEeS86-QB0XH1sQ" type="6002">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_HX-aYWzAEeS86-QB0XH1sQ" x="-6"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_HX-aYmzAEeS86-QB0XH1sQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_HX-aY2zAEeS86-QB0XH1sQ" x="-3" y="-1"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HX-aY2zAEeS86-QB0XH1sQ" x="-42" y="110"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_HX9zUWzAEeS86-QB0XH1sQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSAgent/states"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HX9zUmzAEeS86-QB0XH1sQ" points="[4, 39, -4, -153]$[4, 148, -4, -44]"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//AgentModel/allStates"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HX9zUmzAEeS86-QB0XH1sQ" points="[0, 8, 122, -141]$[0, 149, 122, 0]$[-69, 149, 53, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_enfwcMHwEeShP-SOFUnIaA" id="(0.10714285714285714,0.9120879120879121)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_1H_J8GzBEeS86-QB0XH1sQ" type="4003" source="_ThnykGxZEeS86-QB0XH1sQ" target="_Whh5QGxZEeS86-QB0XH1sQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_1H_J82zBEeS86-QB0XH1sQ" type="6002">
@@ -287,37 +291,28 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_1H_xAmzBEeS86-QB0XH1sQ" x="21" y="-4"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_1H_J8WzBEeS86-QB0XH1sQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSAgent/transactions"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1H_J8mzBEeS86-QB0XH1sQ" points="[0, 0, 9, -334]$[-50, 378, -41, 44]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1IA_IGzBEeS86-QB0XH1sQ" id="(0.6037735849056604,1.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2TBkQGzCEeS86-QB0XH1sQ" id="(0.8661417322834646,0.1016949152542373)"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//AgentModel/transactions"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1H_J8mzBEeS86-QB0XH1sQ" points="[-1, 1, 33, -195]$[-34, 195, 0, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1IA_IGzBEeS86-QB0XH1sQ" id="(0.5571428571428572,0.9560439560439561)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2TBkQGzCEeS86-QB0XH1sQ" id="(0.7480314960629921,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_44UA8GzBEeS86-QB0XH1sQ" type="4004" source="_UswwAGxZEeS86-QB0XH1sQ" target="_VgCnEGxZEeS86-QB0XH1sQ">
     <styles xmi:type="notation:FontStyle" xmi:id="_44UA8WzBEeS86-QB0XH1sQ" fontName="Segoe UI"/>
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_44UoAGzBEeS86-QB0XH1sQ" points="[-75, 3, 445, 0]$[-432, 0, 88, -3]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="__eOK0HKcEeSRvZ8o0Nw3Lg" type="4002" source="_VgCnEGxZEeS86-QB0XH1sQ" target="_Whh5QGxZEeS86-QB0XH1sQ">
-    <children xmi:type="notation:DecorationNode" xmi:id="__eOx4HKcEeSRvZ8o0Nw3Lg" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="__eOx4XKcEeSRvZ8o0Nw3Lg" x="-2"/>
-    </children>
-    <children xmi:type="notation:DecorationNode" xmi:id="__eOx4nKcEeSRvZ8o0Nw3Lg" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="__eOx43KcEeSRvZ8o0Nw3Lg" x="5" y="1"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="__eOK0XKcEeSRvZ8o0Nw3Lg" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSState/transitions"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__eOK0nKcEeSRvZ8o0Nw3Lg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-  </edges>
   <edges xmi:type="notation:Connector" xmi:id="__eaYEHKcEeSRvZ8o0Nw3Lg" type="4002" source="_Whh5QGxZEeS86-QB0XH1sQ" target="_VgCnEGxZEeS86-QB0XH1sQ">
     <children xmi:type="notation:DecorationNode" xmi:id="__eaYE3KcEeSRvZ8o0Nw3Lg" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="__eaYFHKcEeSRvZ8o0Nw3Lg" x="-3" y="8"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__eaYFHKcEeSRvZ8o0Nw3Lg" x="-5" y="4"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="__eaYFXKcEeSRvZ8o0Nw3Lg" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="__eaYFnKcEeSRvZ8o0Nw3Lg" x="-5" y="8"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__eaYFnKcEeSRvZ8o0Nw3Lg" x="-3" y="-5"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="__eaYEXKcEeSRvZ8o0Nw3Lg" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSTransition/source"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__eaYEnKcEeSRvZ8o0Nw3Lg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSTransition/start"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__eaYEnKcEeSRvZ8o0Nw3Lg" points="[0, -1, 89, 47]$[0, -42, 89, 6]$[-88, -42, 1, 6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BqpKIMHxEeShP-SOFUnIaA" id="(0.4251968503937008,0.01694915254237288)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CtsikMHxEeShP-SOFUnIaA" id="(0.9905660377358491,0.64)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="__ec0UHKcEeSRvZ8o0Nw3Lg" type="4002" source="_Whh5QGxZEeS86-QB0XH1sQ" target="_VgCnEGxZEeS86-QB0XH1sQ">
     <children xmi:type="notation:DecorationNode" xmi:id="__ec0U3KcEeSRvZ8o0Nw3Lg" type="6001">
@@ -327,8 +322,10 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="__ec0VnKcEeSRvZ8o0Nw3Lg" x="-1" y="-5"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="__ec0UXKcEeSRvZ8o0Nw3Lg" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSTransition/target"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__ec0UnKcEeSRvZ8o0Nw3Lg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSTransition/end"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__ec0UnKcEeSRvZ8o0Nw3Lg" points="[-2, 0, 71, 59]$[-67, 0, 6, 59]$[-67, -54, 6, 5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6jNNYMHwEeShP-SOFUnIaA" id="(0.015748031496062992,0.6610169491525424)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5zx7kMHwEeShP-SOFUnIaA" id="(0.839622641509434,0.9333333333333333)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_B4btEI8xEeSUBZZr0RetxQ" type="4004" source="_5HW5AI8wEeSUBZZr0RetxQ" target="_svtZ0I4SEeSUBZZr0RetxQ">
     <styles xmi:type="notation:FontStyle" xmi:id="_B4btEY8xEeSUBZZr0RetxQ" fontName="Segoe UI"/>
@@ -342,13 +339,13 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_K021gI8xEeSUBZZr0RetxQ" type="4003" source="_VgCnEGxZEeS86-QB0XH1sQ" target="_9tAOcI8wEeSUBZZr0RetxQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_K021g48xEeSUBZZr0RetxQ" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_K03ckI8xEeSUBZZr0RetxQ" y="40"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_K03ckI8xEeSUBZZr0RetxQ" x="-16" y="-47"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_K03ckY8xEeSUBZZr0RetxQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_K03cko8xEeSUBZZr0RetxQ" y="60"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_K03cko8xEeSUBZZr0RetxQ" x="-3" y="-13"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_K021gY8xEeSUBZZr0RetxQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSState/onStep"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//State/onStepBehaviour"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_K021go8xEeSUBZZr0RetxQ" points="[-6, -56, -19, 96]$[-57, -191, -70, -39]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_QGxbEI8xEeSUBZZr0RetxQ" type="4003" source="_VgCnEGxZEeS86-QB0XH1sQ" target="_5HW5AI8wEeSUBZZr0RetxQ">
@@ -356,45 +353,47 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_QGxbFI8xEeSUBZZr0RetxQ" x="3" y="22"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_QGxbFY8xEeSUBZZr0RetxQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_QGxbFo8xEeSUBZZr0RetxQ" x="-8" y="7"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_QGxbFo8xEeSUBZZr0RetxQ" x="6" y="9"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_QGxbEY8xEeSUBZZr0RetxQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSState/onEntry"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//State/onEntryBehaviour"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QGxbEo8xEeSUBZZr0RetxQ" points="[-98, 21, 151, -44]$[-188, 26, 61, -39]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_RWL0gI8xEeSUBZZr0RetxQ" type="4003" source="_VgCnEGxZEeS86-QB0XH1sQ" target="_5HW5AI8wEeSUBZZr0RetxQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_RWL0g48xEeSUBZZr0RetxQ" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_RWL0hI8xEeSUBZZr0RetxQ" x="1" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RWL0hI8xEeSUBZZr0RetxQ" x="-12" y="-28"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_RWL0hY8xEeSUBZZr0RetxQ" type="6004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_RWL0ho8xEeSUBZZr0RetxQ" x="-10" y="-3"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RWL0ho8xEeSUBZZr0RetxQ" x="1" y="-13"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_RWL0gY8xEeSUBZZr0RetxQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSState/onExit"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//State/onExitBehaviour"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RWL0go8xEeSUBZZr0RetxQ" points="[-98, 41, 112, -47]$[-182, 104, 28, 16]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RWNpsI8xEeSUBZZr0RetxQ" id="(0.7203389830508474,0.7884615384615384)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_u0dQYI8xEeSUBZZr0RetxQ" type="4003" source="_ThnykGxZEeS86-QB0XH1sQ" target="_x8kqII8sEeSUBZZr0RetxQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_u0d3cI8xEeSUBZZr0RetxQ" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_u0d3cY8xEeSUBZZr0RetxQ" y="40"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u0d3cY8xEeSUBZZr0RetxQ" x="17" y="19"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_u0d3co8xEeSUBZZr0RetxQ" type="6004">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_u0d3c48xEeSUBZZr0RetxQ" y="60"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_u0dQYY8xEeSUBZZr0RetxQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSAgent/variables"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u0dQYo8xEeSUBZZr0RetxQ" points="[105, 10, -177, 3]$[165, 10, -117, 3]"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//AgentModel/variables"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u0dQYo8xEeSUBZZr0RetxQ" points="[0, 2, -76, -36]$[0, 38, -76, 0]$[75, 38, -1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m0bVoMHwEeShP-SOFUnIaA" id="(0.8928571428571429,0.978021978021978)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vJ82IMHwEeShP-SOFUnIaA" id="(0.006944444444444444,0.5447154471544715)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_sfNu8I8_EeSUBZZr0RetxQ" type="4003" source="_UswwAGxZEeS86-QB0XH1sQ" target="_5HW5AI8wEeSUBZZr0RetxQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_sfNu848_EeSUBZZr0RetxQ" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_sfNu9I8_EeSUBZZr0RetxQ" x="-2" y="-3"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_sfNu9I8_EeSUBZZr0RetxQ" x="-49" y="12"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_sfNu9Y8_EeSUBZZr0RetxQ" type="6004">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_sfNu9o8_EeSUBZZr0RetxQ" x="-3" y="1"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_sfNu8Y8_EeSUBZZr0RetxQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="psplatform.ecore#//PSStart/onInit"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sfNu8o8_EeSUBZZr0RetxQ" points="[-30, -26, 204, 174]$[-236, -239, -2, -39]"/>
+    <element xmi:type="ecore:EReference" href="psplatform.ecore#//Start/onInitBehaviour"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sfNu8o8_EeSUBZZr0RetxQ" points="[-20, 0, 179, 143]$[-199, 0, 0, 143]$[-199, -117, 0, 26]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sfPkII8_EeSUBZZr0RetxQ" id="(0.19801980198019803,0.46153846153846156)"/>
   </edges>
 </notation:Diagram>

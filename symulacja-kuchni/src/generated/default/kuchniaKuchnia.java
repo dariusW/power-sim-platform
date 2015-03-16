@@ -1,10 +1,8 @@
-package pl.agh.dariuszw.generator;
+package default;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
@@ -22,7 +20,7 @@ import jade.lang.acl.MessageTemplate;
 /**
  * Created by dariuszw on 2014-12-23.
  */
-public class BaseAgent extends ExtendedAgent {
+public class kuchniaKuchnia extends ExtendedAgent {
 
     private static String STORAGE_AGENT_NAME = "storage";
 
@@ -41,7 +39,8 @@ public class BaseAgent extends ExtendedAgent {
 
     // region VARIABLES
 
-    // inject-var
+    // inject-
+
 
     // endregion VARIABLES
 
@@ -67,7 +66,15 @@ public class BaseAgent extends ExtendedAgent {
             }
         });
 
-        // inject-sgo
+        // inject-
+         instanceID = "default.kuchniaKuchnia";
+
+         instanceClass = "default.kuchnia";
+
+         registerState("default.kuchniaKuchnia","New State");
+
+        addBehaviour(new Start());
+
 
         addBehaviour(new Synchronization());
 
@@ -158,7 +165,71 @@ public class BaseAgent extends ExtendedAgent {
 
     }
 
-    // inject-ini
+    // inject-
+    private class Start extends SimBehaviour {
+
+        protected Start(){
+            super(getLocalName(), "Start");
+        }
+
+        @Override
+        public void onStep() {
+        
+        }
+
+        @Override
+        public void onEntry(){
+
+        }
+
+        @Override
+        public void onExit(){
+
+        }
+
+        @Override
+        public boolean isDone(){
+            if(transition_0()){
+                addBehaviour(new State_default());
+                return true;
+            }
+            return false;
+        }
+        private boolean transition_0(){
+null
+        }
+       protected boolean isStart(){ return true; }
+
+    }
+
+    private class State_default extends SimBehaviour {
+
+        protected State_default(){
+            super(getLocalName(), "New State");
+        }
+
+        @Override
+        public void onStep() {
+        null
+        }
+
+        @Override
+        public void onEntry(){
+null
+        }
+
+        @Override
+        public void onExit(){
+null
+        }
+
+        @Override
+        public boolean isDone(){
+            return false;
+        }
+    }
+
+
 
     // endregion BEHAVIOURS
 

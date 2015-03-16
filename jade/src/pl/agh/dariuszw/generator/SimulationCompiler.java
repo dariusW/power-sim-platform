@@ -22,7 +22,6 @@ public class SimulationCompiler {
         String target = path + "compiled/";
 
         (new File(target)).mkdirs();
-
         compileAll(simulation, agents, sources, target);
 
     }
@@ -30,7 +29,13 @@ public class SimulationCompiler {
     private static void compileAll(PSSimulation simulation, Collection<PSAgent> agents, String sources, String target) {
         for (PSInstance inst : simulation.getElement()) {
             String classes = sources + inst.getModelClass().replace(".", "/") + inst.getId() + ".java";
-            compiler.run(null, null, null, "-d", target, classes);
+            if(compiler == null){
+                throw new RuntimeException("compiler is NULL!");
+            }
+            int res = compiler.run(null, null, null, "-d", target, classes);
+            if(res != 0){
+                throw new RuntimeException("Compilation of model failed!");
+            }
         }
     }
 }

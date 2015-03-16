@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pl.agh:PSSimulation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pl.agh="pssimulation" id="simulation-config" description="" name="simulation-config" simulationStep="PT10M" simulationStartDate="2015-06-03T01:00" simulationEndDate="2015-06-04T01:00">
+  <element id="Kuchnia" initBehaviour="" modelClass="agh.kuchnia" modelPath="C:/Users/dariuszw/graphiti/symulacja-kuchni/src/diagrams/kuchnia.diagram" name="Kuchnia"/>
+</pl.agh:PSSimulation>

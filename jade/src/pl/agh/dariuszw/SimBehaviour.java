@@ -1,6 +1,7 @@
 package pl.agh.dariuszw;
 
 import jade.core.AID;
+import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 import org.apache.logging.log4j.Logger;
@@ -16,6 +17,8 @@ public abstract class SimBehaviour extends Behaviour {
     protected final String localName;
 
     private boolean init = true;
+
+    public boolean firstBehaviourCall = true;
 
     private static String STORAGE_AGENT_NAME = "storage";
 
@@ -34,12 +37,20 @@ public abstract class SimBehaviour extends Behaviour {
     public final void action() {
         if ( init ) {
             init = false;
+            firstBehaviourCall = true;
             log("onEntry");
             sendStateMessage();
+            Agent a = getAgent();
+            if(a != null && a instanceof ExtendedAgent){
+                ((ExtendedAgent) a).addState(id);
+            }
             onEntry();
         }
         log("onStep");
         onStep();
+        if(firstBehaviourCall) {
+            firstBehaviourCall = false;
+        }
     }
 
     private void sendStateMessage(){
@@ -70,6 +81,10 @@ public abstract class SimBehaviour extends Behaviour {
         boolean isDone = isDone();
         if ( isDone ) {
             log("onExit");
+            Agent a = getAgent();
+            if(a != null && a instanceof ExtendedAgent){
+                ((ExtendedAgent) a).removeState(id);
+            }
             onExit();
         }
         return isDone;

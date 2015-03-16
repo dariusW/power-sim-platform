@@ -1,5 +1,6 @@
 package pl.agh.dariuszw;
 
+import org.apache.commons.lang3.StringUtils;
 import pl.agh.dariuszw.generator.SimulationCompiler;
 import pl.agh.dariuszw.generator.SimulationContextGenerator;
 import pl.agh.dariuszw.generator.SimulationReader;
@@ -9,6 +10,7 @@ import pssimulation.PSInstance;
 import pssimulation.PSSimulation;
 
 import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +62,18 @@ public class RunTime {
             run = true;
             String pth = args[0].substring(0, args[0].lastIndexOf('/'));
             pth = pth.substring(0, pth.lastIndexOf('/')) + "/compiled/";
-            SimulationRunner.run(simulation, pth);
+
+
+            String basePath = args.length > 2 ? args[2]: "";
+            if(StringUtils.isBlank(basePath)){
+                URL url = RunTime.class.getResource("RunTime.class");
+                basePath = url.toString();
+                basePath = basePath.substring(basePath.indexOf("/"), url.toString().length()-50);
+                System.out.println("BASEPATH -> "+basePath);
+            }
+
+
+            SimulationRunner.run(simulation, pth, basePath);
         }
 
 
